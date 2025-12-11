@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Aplikasi Pemerintah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* Animasi Header */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.8s ease both;
+      }
+
+      /* Fade Grid Items */
+      .fade-grid {
+        animation: fadeGrid 0.9s ease;
+      }
+      @keyframes fadeGrid {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 dark:bg-gray-900 font-sans relative transition">
+    <!-- Background -->
+    <div
+      class="absolute inset-0 pointer-events-none opacity-15"
+      style="
+        background-image: linear-gradient(135deg, #6cb1da, #c35b5b),
+          url('https://www.transparenttextures.com/patterns/diagmonds.png');
+        background-size: cover;
+        z-index: -1;
+      "
+    ></div>
+
+    <!-- Header -->
+    <header
+      class="bg-gradient-to-r from-green-700 via-green-600 to-yellow-500 text-white shadow-md py-5 px-6 flex items-center justify-center sticky top-0 z-50"
+    >
+      <div class="flex items-center gap-3 flex-1">
+        <img
+          src="logo.png"
+          class="w-12 h-12 rounded-md shadow-md hover:scale-110 transition"
+        />
+      </div>
+
+      <h1
+        class="text-xl md:text-3xl font-bold text-center tracking-wide animate-fadeIn"
+      >
+        SAPPA SULTAN
+      </h1>
+
+      <div class="flex items-center gap-2 flex-1 justify-end">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="🔍 Cari aplikasi..."
+          class="w-48 md:w-72 bg-white/20 backdrop-blur-md border border-white/30 text-white placeholder-white/80 rounded-full px-4 py-2 shadow focus:ring-2 focus:ring-yellow-300 outline-none"
+        />
+
+        <button
+          onclick="window.open('https://drive.google.com/drive/folders/1rtCpYWF_w5ASjgGuhrMCIO07GvMt1Hn6?usp=sharing')"
+          class="bg-white/20 px-4 py-2 rounded-full text-white shadow backdrop-blur-md hover:scale-110 border border-white/30 transition"
+        >
+          📁 Drive
+        </button>
+      </div>
+    </header>
+
+    <!-- Container -->
+    <div class="p-6">
+      <div
+        id="appGrid"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      >
+        <!-- Semua card tetap sama -->
+        <!-- Hanya tinggi seragam dan flex alignment -->
+        <a
+          href="https://spse.inaproc.id/sumedangkab/"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="spse.png" class="logo" />
+          <h2>SPSE INAPROC</h2>
+          <p>Sistem Pengadaan Elektronik</p>
+        </a>
+
+        <a
+          href="https://sirup.lkpp.go.id/sirup/loginctr/index"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="sirup.png" class="logo" />
+          <h2>SIRUP LKPP</h2>
+          <p>Rencana Umum Pengadaan</p>
+        </a>
+
+        <a
+          href="https://sijagur.sumedangkab.go.id/admin"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="logo.png" class="logo" />
+          <h2>SIJAGUR</h2>
+          <p>Administratif Sumedang</p>
+        </a>
+
+        <a
+          href="https://sipd-ri.kemendagri.go.id/auth/login"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="sipd.png" class="logo" />
+          <h2>SIPD RI</h2>
+          <p>Perencanaan dan Anggaran</p>
+        </a>
+
+        <a
+          href="https://sibarasat.sumedangkab.go.id/login"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="sibarasat.png" class="logo" />
+          <h2>SIBARASAT</h2>
+          <p>Monitoring & Evaluasi</p>
+        </a>
+
+        <a
+          href="https://sipdok.sumedangkab.go.id"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="logo.png" class="logo" />
+          <h2>SIPDOK</h2>
+          <p>Surat & Dokumen Resmi</p>
+        </a>
+
+        <a
+          href="https://e-office.sumedangkab.go.id/admin/login"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="eoffice.png" class="logo" />
+          <h2>E-OFFICE</h2>
+          <p>Administrasi Kantor Digital</p>
+        </a>
+
+        <a
+          href="https://djponline.pajak.go.id/account/login"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="djp.png" class="logo" />
+          <h2>DJP Online</h2>
+          <p>Perpajakan Nasional</p>
+        </a>
+
+        <a
+          href="https://silasidakep-dev.sumedangkab.go.id/user/login"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="logo.png" class="logo" />
+          <h2>SILASIDAKEP</h2>
+          <p>Manajemen Data Wilayah</p>
+        </a>
+
+        <a
+          href="https://siapdol.sumedangkab.go.id/siapdol/menu/"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="siapdol.png" class="logo" />
+          <h2>SIAPDOL</h2>
+          <p>Sistem Aplikasi Pelayanan</p>
+        </a>
+
+        <a
+          href="https://sipd.kemendagri.go.id/landing"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="sipd.png" class="logo" />
+          <h2>SIPD Kemendagri</h2>
+          <p>Informasi Pemerintahan Daerah</p>
+        </a>
+
+        <a
+          href="https://sipantes.sumedangkab.go.id/login"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="logo.png" class="logo" />
+          <h2>SIPANTES</h2>
+          <p>Sistem Pelayanan Administrasi Terpadu</p>
+        </a>
+
+        <a
+          href="https://asndigital.bkn.go.id/login"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="SIASN.png" class="logo" />
+          <h2>SIASN</h2>
+          <p>Sistem Informasi ASN</p>
+        </a>
+        <a
+          href="https://sipekat.sumedangkab.go.id/login"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img src="logo.png" class="logo" />
+          <h2>SIPEKAT</h2>
+          <p>Sistem Informasi Penatausahaan Keuangan Terintegrasi</p>
+        </a>
+        <!-- ===== Tambahan Social Media ===== -->
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+            class="logo"
+          />
+          <h2>Instagram</h2>
+          <p>Info & Publikasi Kegiatan</p>
+        </a>
+
+        <a
+          href="https://www.facebook.com"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+            class="logo"
+          />
+          <h2>Facebook</h2>
+          <p>Halaman Informasi Publik</p>
+        </a>
+
+        <a
+          href="https://www.tiktok.com"
+          target="_blank"
+          class="app-card card fade-grid"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"
+            class="logo"
+          />
+          <h2>TikTok</h2>
+          <p>Video Sosialisasi & Edukasi</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card Style (Diperbaiki tingginya seragam) -->
+    <style>
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+        cursor: pointer;
+        transition: 0.3s;
+        height: 210px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .card:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.19);
+      }
+
+      /* --- Efek Logo Bergerak --- */
+      @keyframes logoMove {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.12);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .logo {
+        width: 80px;
+        margin: auto;
+        border-radius: 10px;
+        animation: logoMove 3s infinite ease-in-out;
+        transition: transform 0.4s;
+      }
+
+      .card:hover .logo {
+        transform: scale(1.25) rotate(10deg);
+      }
+    </style>
+
+    <!-- Scroll Button -->
+    <button
+      id="scrollTopBtn"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth'});"
+      class="fixed bottom-6 right-6 bg-green-600 text-white px-4 py-2 rounded-full shadow-md hover:bg-green-700 hidden"
+    >
+      ⬆
+    </button>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-600 dark:text-gray-300 py-6">
+      © 2025 - Dashboard Sultan
+    </footer>
+
+    <script>
+      // Search Filter
+      const searchInput = document.getElementById("searchInput");
+      const cards = document.querySelectorAll(".app-card");
+
+      searchInput.addEventListener("keyup", () => {
+        const key = searchInput.value.toLowerCase();
+        cards.forEach(
+          (card) =>
+            (card.style.display = card.innerText.toLowerCase().includes(key)
+              ? "block"
+              : "none")
+        );
+      });
+
+      // Scroll Button
+      window.addEventListener("scroll", () => {
+        document.getElementById("scrollTopBtn").style.display =
+          window.scrollY > 250 ? "block" : "none";
+      });
+    </script>
+  </body>
+</html>
